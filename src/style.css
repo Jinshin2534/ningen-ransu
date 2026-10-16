@@ -1,0 +1,115 @@
+:root {
+  --bg: #f4f1ea;
+  --surface: #fffdf8;
+  --ink: #1f2128;
+  --muted: #6e6a62;
+  --line: #e2dccf;
+  --omote: #d4462a;
+  --ura: #26477a;
+  --null: #c9c3b6;
+  --null-tail: #8d8679;
+  --hit: #b4321b;
+  --calm: #3c6e57;
+  --radius: 14px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+.screen { max-width: 600px; margin: 0 auto; padding: 16px 16px 48px; display: flex; flex-direction: column; gap: 14px; }
+.app-header .kicker { margin: 8px 0 0; font-size: 0.8rem; letter-spacing: 0.2em; color: var(--muted); }
+.app-header h1 { margin: 0; font-size: 2.2rem; letter-spacing: 0.1em; }
+.app-header .lede { margin: 0; color: var(--muted); }
+h2 { margin: 0; font-size: 1.3rem; line-height: 1.4; }
+h3 { margin: 0; font-size: 1.05rem; }
+p { margin: 0.4em 0; }
+.muted { color: var(--muted); }
+.omote { color: var(--omote); }
+.ura { color: var(--ura); }
+.num { font-variant-numeric: tabular-nums; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+.card.quiet { background: transparent; }
+.card.center { text-align: center; padding: 48px 18px; }
+.big-text { font-size: 1.4rem; font-weight: 700; }
+.steps { padding-left: 1.3em; margin: 8px 0 16px; }
+.steps li { margin: 6px 0; }
+.hint { color: var(--muted); font-size: 0.88rem; text-align: center; }
+kbd { font: inherit; font-size: 0.8rem; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 0 6px; background: var(--surface); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.row.center { justify-content: center; }
+.foot { color: var(--muted); font-size: 0.8rem; text-align: center; margin-top: 12px; }
+
+button { font: inherit; cursor: pointer; border-radius: 999px; border: 1px solid transparent; padding: 11px 18px; }
+button.primary { background: var(--ink); color: #fff; }
+button.primary.big { width: 100%; padding: 14px; font-size: 1.1rem; font-weight: 700; }
+.row button.primary.big { width: auto; flex: 1; }
+button.ghost { background: transparent; border-color: var(--line); color: var(--ink); }
+button.ghost:hover { border-color: var(--ink); }
+button.link { background: none; border: none; color: var(--muted); text-decoration: underline; align-self: center; font-size: 0.88rem; }
+button:focus-visible { outline: 3px solid #e9b44c; outline-offset: 2px; }
+
+.progress-head { display: flex; justify-content: space-between; align-items: baseline; margin-top: 8px; }
+.count { font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+.count b { font-size: 2rem; }
+.sealed { color: var(--muted); font-size: 0.88rem; }
+.bar { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--ink); transition: width 0.1s; }
+.pad { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+.coin { aspect-ratio: 1 / 1; border-radius: 24px; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; touch-action: manipulation; user-select: none; -webkit-user-select: none; box-shadow: 0 4px 0 rgba(0,0,0,0.18); transition: transform 0.05s, box-shadow 0.05s; }
+.coin:active { transform: translateY(3px); box-shadow: 0 1px 0 rgba(0,0,0,0.18); }
+.coin span { font-size: 3.4rem; font-weight: 800; line-height: 1; }
+.coin small { opacity: 0.75; font-size: 0.8rem; }
+.omote-btn { background: var(--omote); }
+.ura-btn { background: var(--ura); }
+.live-strip, .strip-wrap { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px; }
+.strip { display: block; width: 100%; height: auto; }
+.c-omote { fill: var(--omote); }
+.c-ura { fill: var(--ura); }
+.hit-dot { fill: #fff; }
+.strip-label { margin: 12px 0 4px; font-size: 0.9rem; font-weight: 600; }
+
+.demo-note { background: #fff3cd; border: 1px solid #ecd58a; border-radius: 10px; padding: 8px 12px; margin: 0; font-size: 0.9rem; }
+.verdict { border-width: 2px; }
+.verdict .v-label { margin: 0; font-size: 0.78rem; letter-spacing: 0.2em; color: var(--muted); }
+.v-hit { border-color: var(--hit); }
+.v-hit h2 { color: var(--hit); }
+.v-calm { border-color: var(--calm); }
+.v-calm h2 { color: var(--calm); }
+.test-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.badge { flex: none; font-size: 0.75rem; font-weight: 700; border-radius: 999px; padding: 2px 10px; }
+.badge.hit { background: var(--hit); color: #fff; }
+.badge.calm { background: #e3eee7; color: var(--calm); }
+.hero-num { margin: 6px 0 0; font-size: 1.2rem; }
+.hero-num b { font-size: 3.2rem; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.pline { font-size: 0.88rem; margin-top: 8px; font-variant-numeric: tabular-nums; }
+.cap { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+.ok { color: var(--calm); font-weight: 600; }
+.ng { color: var(--hit); font-weight: 700; }
+
+.chart { display: block; width: 100%; height: auto; margin-top: 10px; overflow: visible; }
+.chart .h-bar { fill: var(--null); }
+.chart .h-tail { fill: var(--null-tail); }
+.chart .h-you { fill: var(--ink); opacity: 0.85; }
+.chart .axis { stroke: var(--muted); stroke-width: 1; }
+.chart .you-line { stroke: var(--omote); stroke-width: 2.5; }
+.chart .you-label { fill: var(--omote); font-size: 12px; font-weight: 700; }
+.chart .tick { fill: var(--muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.chart .tick.tri { font-size: 10.5px; font-weight: 700; }
+.chart .t-omote { fill: var(--omote); }
+.chart .t-ura { fill: var(--ura); }
+.chart .band { fill: var(--null); opacity: 0.55; }
+.chart .you-path { fill: none; stroke: var(--omote); stroke-width: 2; stroke-linejoin: round; }
+.chart .null-range { stroke: var(--null-tail); stroke-width: 2; }
+.chart .null-mean { fill: var(--surface); stroke: var(--null-tail); stroke-width: 2; }
+.chart .expect-line { stroke: var(--null-tail); stroke-width: 1.5; stroke-dasharray: 4 3; }
+
+@media (min-width: 560px) {
+  .pad { max-width: 440px; margin-left: auto; margin-right: auto; width: 100%; }
+}

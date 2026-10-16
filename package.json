@@ -1,0 +1,20 @@
+{
+  "name": "ningen-ransu",
+  "version": "0.1.0",
+  "description": "表/裏を200回ランダムに押してもらい、あなたの乱数が本物とどこが違うかを検定と予測器で暴く",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8"
+  },
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0"
+}
